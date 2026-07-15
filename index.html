@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Hand Gesture To Speech</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- MediaPipe Dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="container">
+    <h1>🤖 AI Hand Gesture To Speech</h1>
+    <p class="subtitle">Show a hand gesture in front of your camera. The detected gesture will be converted into text and spoken aloud.</p>
+
+    <div class="cameraBox">
+        <video class="input_video" autoplay playsinline muted></video>
+        <canvas class="output_canvas"></canvas>
+    </div>
+
+    <div class="resultBox">
+        <h2>Detected Gesture</h2>
+        <div id="gestureName">Waiting...</div>
+
+        <h2>Typed Sentence</h2>
+        <textarea id="sentence" rows="6" readonly placeholder="Detected words will appear here..."></textarea>
+
+        <div class="buttons">
+            <button id="clearBtn">🗑 Clear</button>
+            <button id="copyBtn">📋 Copy</button>
+            <button id="downloadBtn">💾 Download</button>
+            <button id="backspaceBtn">⌫ Backspace</button>
+            <button id="spaceBtn">␣ Space</button>
+            <button id="upperBtn">🔠 UPPER</button>
+            <button id="lowerBtn">🔡 lower</button>
+            <button id="speakBtn">🔊 Speak</button>
+        </div>
+    </div>
+
+    <div class="gestureGuide">
+        <h2>Supported Gestures</h2>
+        <table>
+            <tr><th>Gesture</th><th>Output</th></tr>
+            <tr><td>👍</td><td>YES</td></tr>
+            <tr><td>👎</td><td>NO</td></tr>
+            <tr><td>✋</td><td>HELLO</td></tr>
+            <tr><td>✌️</td><td>PEACE</td></tr>
+            <tr><td>☝️</td><td>ONE</td></tr>
+            <tr><td>✊</td><td>STOP</td></tr>
+            <tr><td>👌</td><td>OK</td></tr>
+            <tr><td>🤟</td><td>I LOVE YOU</td></tr>
+        </table>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
